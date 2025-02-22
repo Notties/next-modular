@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { enabledModules } from "./package/middleware/config";
+import { enabledModules } from "./package/module/config";
 
 const nextConfig: NextConfig = {
   webpack: (config) => {

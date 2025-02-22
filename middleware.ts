@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { enabledModules } from "./package/middleware/config";
+import { enabledModules } from "./package/module/config";
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl.pathname;
