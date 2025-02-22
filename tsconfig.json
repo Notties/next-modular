@@ -23,7 +23,8 @@
       "@/middleware/*": ["./package/middleware/*"],
       "@/module/*": ["./package/module/*"],
       "@/ui/*": ["./package/ui/*"],
-      "@/package/*": ["./package/*"]
+      "@/package/*": ["./package/*"],
+      "@/shared/*": ["./shared/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

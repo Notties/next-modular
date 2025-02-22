@@ -1,15 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { enabledModules } from "./package/module/config";
+import { enabledModules } from "@/package/module/config";
+import { isModuleEnabled } from "@/shared/lib/utils";
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl.pathname;
 
-  if (!enabledModules.inventory && url.startsWith("/inventory")) {
-    return NextResponse.redirect(new URL("/", req.url));
-  }
-
-  if (!enabledModules.product && url.startsWith("/product")) {
-    return NextResponse.redirect(new URL("/", req.url));
+  for (const moduleName of Object.keys(enabledModules)) {
+    if (url.startsWith(`/${moduleName}`)) {
+      const modulePath = url
+        .replace(`/${moduleName}`, moduleName)
+        .replace(/\//g, "/");
+      if (!isModuleEnabled(modulePath)) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
+    }
   }
 
   return NextResponse.next();
