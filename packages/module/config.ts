@@ -1,8 +1,8 @@
-type ModuleConfig = {
+export type ModuleConfig = {
   enabled: boolean;
   subModules: Record<string, boolean>;
 };
-type EnabledModules = Record<string, ModuleConfig>;
+export type EnabledModules = Record<string, ModuleConfig>;
 
 export const enabledModules: EnabledModules = {
   inventory: {

@@ -1,4 +1,4 @@
-import Nav from "@/package/ui/Nav";
+import Nav from "@/packages/ui/Nav";
 
 export default function Home() {
   return (

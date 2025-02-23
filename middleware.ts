@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { enabledModules } from "@/package/module/config";
+import { enabledModules } from "@/packages/module/config";
 import { isModuleEnabled } from "@/shared/lib/utils";
 
 export function middleware(req: NextRequest) {

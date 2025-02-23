@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { enabledModules } from "@/package/module/config";
+import { enabledModules } from "@/packages/module/config";
 
 const Inventory = enabledModules.inventory.enabled
   ? dynamic(() => import("@/module/inventory/pages/page"))

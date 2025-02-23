@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { enabledModules } from "@/package/module/config";
+import { enabledModules } from "@/packages/module/config";
 
 export default function Nav() {
   return (
